@@ -1,0 +1,20 @@
+name: test action
+
+on:
+  push:
+    branches: [master]
+    
+jobs:
+  # name of the job
+  mybuild:
+    # defines a runner
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run a one-liner
+        run: echo Hello, world!
+      - name: Run a multi-liner
+        run: |
+          ls -a
+          pwd
+          echo Running multiliner
